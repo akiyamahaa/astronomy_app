@@ -24,7 +24,7 @@ const AboutScreen = (props: Props) => {
       <ScrollView>
         <Box>
           <Text>This is About Page</Text>
-          {listStar.map((star) => (
+          {listStar.map((star:any) => (
             <Box key={star.name}> 
               <Text>{star.name}</Text>
               <Text>{star.desc}</Text>

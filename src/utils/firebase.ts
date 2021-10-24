@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAxpgWhp-9KYf9RWDWqTKKrj5qTpY28DIE",
-  authDomain: "expo-template-9687b.firebaseapp.com",
-  projectId: "expo-template-9687b",
-  storageBucket: "expo-template-9687b.appspot.com",
-  messagingSenderId: "467529295744",
-  appId: "1:467529295744:web:dc93367c2cccf077ee4365",
-  measurementId: "G-XVSQKF4H44"
+  apiKey: "AIzaSyBWPOYg0kUED5ZoTUYJ7EhCHvBZlTaNQLQ",
+  authDomain: "asotronomy-app.firebaseapp.com",
+  projectId: "asotronomy-app",
+  storageBucket: "asotronomy-app.appspot.com",
+  messagingSenderId: "198897303608",
+  appId: "1:198897303608:web:51103de2bf1f31c463e6cd",
+  measurementId: "G-FEPDTKY1HE"
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);

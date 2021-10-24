@@ -1,12 +1,13 @@
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import LoadingScreen from 'components/LoadingScreen';
 import { StatusBar } from 'expo-status-bar';
-import { NativeBaseProvider } from 'native-base';
+import { Box, NativeBaseProvider } from 'native-base';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import store from 'redux/stores';
-import AboutScreen from 'screens/about/AboutScreen';
+import DetailScreen from 'screens/detail/DetailScreen';
 import GlobalStyles from 'utils/styles';
 
 const MyTheme = {
@@ -20,13 +21,18 @@ const MyTheme = {
 
 export default function App() {
   return (
-    <SafeAreaProvider style={[styles.root, GlobalStyles.AndroidSafeArea]}>
+    <SafeAreaProvider
+      style={[
+        styles.root,
+        GlobalStyles.AndroidSafeArea,
+        GlobalStyles.IOsSafeArea,
+      ]}
+    >
       <Provider store={store}>
         <NativeBaseProvider>
           <NavigationContainer theme={MyTheme}>
-            <SafeAreaView />
-            <AboutScreen />
             <StatusBar style="auto" />
+            <DetailScreen />
           </NavigationContainer>
         </NativeBaseProvider>
       </Provider>

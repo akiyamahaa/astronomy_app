@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Box } from 'native-base';
 import { PicturePuzzle, PuzzlePieces } from 'react-native-picture-puzzle';
 import { ActivityIndicator } from 'react-native';
