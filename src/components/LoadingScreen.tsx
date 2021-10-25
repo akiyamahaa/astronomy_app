@@ -1,25 +1,18 @@
 import { useNavigation } from '@react-navigation/core';
 import { Box, Image } from 'native-base';
 import React, { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 interface Props {}
 
 const LoadingScreen = (props: Props) => {
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    const navigateHome = () => {};
-    return () => {};
-  }, []);
+  const { height } = Dimensions.get('screen');
   return (
-    <Box style={styles.root}>
+    <Box style={[styles.root, { width: '100%', height: height }]}>
       <Image
-        style={{ width: '100%', flex: 1 }}
-        source={{
-          uri: 'https://www.gifcen.com/wp-content/uploads/2021/08/.gif',
-        }}
+        source={require('assets/loading.gif')}
         alt="gif_loading"
+        style={{ marginBottom: 100 }}
       />
     </Box>
   );
@@ -27,7 +20,8 @@ const LoadingScreen = (props: Props) => {
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

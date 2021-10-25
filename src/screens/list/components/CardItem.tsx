@@ -2,30 +2,36 @@ import { useNavigation } from '@react-navigation/core';
 import { Box, Image, Text } from 'native-base';
 import React from 'react';
 import { Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
+import { IDataType } from 'utils/utils';
 
 interface Props {
-  title?: string;
-  image_uri?: string;
+  item: IDataType;
+  categoryName: string;
 }
 
 const CardItem = (props: Props) => {
-  const { image_uri, title } = props;
-  const navigation = useNavigation();
+  const { item, categoryName } = props;
+  const navigation = useNavigation<any>();
   const { width } = Dimensions.get('screen');
 
-  const navigateDetail = () => {};
+  const navigateDetail = () => {
+    navigation.navigate('DetailItem', {
+      categoryName: categoryName,
+      itemId: item.id,
+    });
+  };
   return (
     <TouchableOpacity onPress={navigateDetail}>
       <Box style={[styles.root, { width: (width - 40) / 2 }]}>
         <Image
           source={{
-            uri: 'https://firebasestorage.googleapis.com/v0/b/asotronomy-app.appspot.com/o/gemini-hero.jpeg?alt=media&token=6b672a14-7dc7-4172-80d4-22f1cf8e8ff1',
+            uri: item.image,
           }}
           style={styles.imageStyle}
           alt="image"
         />
         <Text p="2" bold>
-          Chỏm Bạch Dương
+          {item.title}
         </Text>
       </Box>
     </TouchableOpacity>
