@@ -13,7 +13,6 @@ const GameScreen = (props: Props) => {
   const item =
   Object.keys(route.params).length > 0 ? route.params.item : '';
   
-  console.log("🚀 ~ file: GameScreen.tsx ~ line 14 ~ GameScreen ~ item", item)
   return (
     <Box>
       

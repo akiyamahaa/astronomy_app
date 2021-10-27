@@ -15,7 +15,7 @@ const CardItem = (props: Props) => {
   const { width } = Dimensions.get('screen');
 
   const navigateDetail = () => {
-    navigation.navigate('DetailItem', {
+    navigation.navigate('DetailScreen', {
       categoryName: categoryName,
       itemId: item.id,
     });
@@ -30,7 +30,7 @@ const CardItem = (props: Props) => {
           style={styles.imageStyle}
           alt="image"
         />
-        <Text p="2" bold>
+        <Text p="2" bold textAlign="center" numberOfLines={2}>
           {item.title}
         </Text>
       </Box>
@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 6,
     borderWidth: 0.5,
+    height: 200,
+    borderColor: '#cecece',
+    backgroundColor: '#fff',
   },
   imageStyle: {
     width: '100%',

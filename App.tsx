@@ -1,10 +1,11 @@
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import LoadingScreen from 'components/LoadingScreen';
-import { StatusBar } from 'expo-status-bar';
-import { Box, NativeBaseProvider } from 'native-base';
+// import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
+import { Box, extendTheme, NativeBaseProvider } from 'native-base';
+import Root from 'navigation/Root';
 import TabNav from 'navigation/TabNav';
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
+import { StatusBar, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import store from 'redux/stores';
@@ -19,6 +20,20 @@ const MyTheme = {
   },
 };
 
+const theme = extendTheme({
+  components: {
+    Text: {},
+    /*
+      Element:{
+        baseStyle:{},
+        defaultProps:{},
+        variant:{},
+        size:{},
+      }
+    */
+  },
+});
+
 export default function App() {
   return (
     <SafeAreaProvider
@@ -29,9 +44,13 @@ export default function App() {
       ]}
     >
       <Provider store={store}>
-        <NativeBaseProvider>
+        <NativeBaseProvider theme={theme}>
           <NavigationContainer theme={MyTheme}>
-            <StatusBar style="auto" />
+            <StatusBar
+              animated={true}
+              translucent
+              backgroundColor="transparent"
+            />
             <TabNav />
           </NavigationContainer>
         </NativeBaseProvider>

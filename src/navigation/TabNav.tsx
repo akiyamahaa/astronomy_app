@@ -3,7 +3,6 @@ import Icon, { Icons } from 'components/Icons';
 import * as Animatable from 'react-native-animatable';
 import React, { useRef, useEffect } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import CategoryScreen from 'screens/category/CategoryScreen';
 import HomeScreen from 'screens/home/HomeScreen';
 import Colors from 'utils/Colors';
 import CategoryStack from './CategoryStack';

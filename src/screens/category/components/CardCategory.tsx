@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/core';
 import { Box, Image, Text } from 'native-base';
 import React from 'react';
 import { Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
+import { backgroundColor } from 'styled-system';
 import { IDataType } from 'utils/utils';
 
 interface Props {
@@ -48,6 +49,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 6,
     borderWidth: 0.5,
+    borderColor:'#cecece',
+    backgroundColor:'#fff'
   },
   imageStyle: {
     width: '100%',

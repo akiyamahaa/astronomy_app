@@ -22,7 +22,7 @@ const CategoryStack = (props: Props) => {
         component={ListScreen}
       />
       <Stack.Screen
-        name="DetailItem"
+        name="DetailScreen"
         options={{ headerShown: false }}
         component={DetailScreen}
       />

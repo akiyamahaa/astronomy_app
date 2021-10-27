@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/core';
 import Header from 'components/Header';
 import LoadingScreen from 'components/LoadingScreen';
-import { Box, ScrollView } from 'native-base';
+import { Box, Image, ScrollView } from 'native-base';
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { Dimensions, SafeAreaView, StyleSheet } from 'react-native';
 import { collection_list } from 'utils/firebase';
 import { getFirestoreDB } from 'utils/utils';
 import CardCategory from './components/CardCategory';
@@ -11,15 +11,15 @@ import CardCategory from './components/CardCategory';
 interface Props {}
 
 const CategoryScreen = (props: Props) => {
-  const navigation = useNavigation();
+  const { width, height } = Dimensions.get('window');
   const [categoryList, setCategoryList] = useState<any>({
     astrology: [],
     aurora: [],
-    binarystar: [],
-    blackhole: [],
+    // binarystar: [],
+    // blackhole: [],
     darkmatter: [],
-    dwarf: [],
-    eclipse: [],
+    // dwarf: [],
+    // eclipse: [],
     galaxy: [],
     meteor: [],
     meteorite: [],
@@ -30,11 +30,11 @@ const CategoryScreen = (props: Props) => {
     const [
       astrologyList,
       auroraList,
-      binaryStarList,
-      blackHoleList,
+      // binaryStarList,
+      // blackHoleList,
       darkMatterList,
-      dwarfList,
-      eclipseList,
+      // dwarfList,
+      // eclipseList,
       galaxyList,
       meteorList,
       meteoriteList,
@@ -46,11 +46,11 @@ const CategoryScreen = (props: Props) => {
       ...categoryList,
       astrology: astrologyList,
       aurora: auroraList,
-      binarystar: binaryStarList,
-      blackhole: blackHoleList,
+      // binarystar: binaryStarList,
+      // blackhole: blackHoleList,
       darkmatter: darkMatterList,
-      dwarf: dwarfList,
-      eclipse: eclipseList,
+      // dwarf: dwarfList,
+      // eclipse: eclipseList,
       galaxy: galaxyList,
       meteor: meteorList,
       meteorite: meteoriteList,
@@ -64,6 +64,19 @@ const CategoryScreen = (props: Props) => {
 
   return (
     <SafeAreaView>
+      <Box>
+        <Image
+          style={{
+            height: height,
+            width: width,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+          }}
+          source={require('assets/bg-galaxy.jpg')}
+          alt="bg-category"
+        />
+      </Box>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Box style={{ marginBottom: 80 }}>
           <Header headerTitle="Các loại hành tinh" hasBackButton={false} />
